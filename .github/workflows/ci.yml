@@ -1,40 +1,17 @@
-name: CI
-on: [push]
+name: calculator-app
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - lint
-      - test
-      - build-image
-      - run-server
-
-    lint:
-      image: python:3.9
-      stage: lint
-      before_script:
-        - pip install poetry
-        - poetry install
-        - poetry config virtualenvs.create false
-      script:
-        - make lint
-
-      test:
-        image: python:3.9
-        stage: lint
-        before_script:
-          - pip install poetry
-          - poetry install
-          - poetry config virtualenvs.create false
-        script:
-          - make run_test
-
-        build-image:
-          image: python:3.9
-          stage: lint
-          before_script:
-            - pip install poetry
-            - poetry install
-            - poetry config virtualenvs.create false
-          script:
-            - make docker_build_project
+      - name: linting application
+        run: pip install poetry && poetry install && make lint
+      - name: test application
+        run: pip install poetry && poetry install && make test
+      - name: build-image
+        run: pip install poetry && poetry install && make docker_build_project
