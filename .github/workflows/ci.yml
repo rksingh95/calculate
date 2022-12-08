@@ -22,11 +22,11 @@ jobs:
             if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         - name: Lint with black
           run: |
-              black app
-              black --check app
+              make lint
         - name: Test with pytest
           run: |
-            pytest
+            make test
         - name: Build Image
           run: |
             make docker_build_project
+            make run_server
