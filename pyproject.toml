@@ -2,7 +2,7 @@
 name = "calculator"
 version = "0.1.0"
 description = ""
-authors = ["Rahul Singh <rahul.singh@momox.biz>"]
+authors = ["Rahul Singh"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
