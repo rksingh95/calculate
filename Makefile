@@ -5,14 +5,8 @@ docker_build_project:
 docker_remove_project:
 	docker-compose down
 
-podman_build:
-	podman-compose up -d
-
-podman_remove_project:
-	podman-compose down
-
 run_server:
-	poetry run uvicorn app.main:app --reload --workers 3
+	poetry run uvicorn app.main:app --reload
 
 run_test:
 	poetry run pytest app/
