@@ -1,3 +1,6 @@
+from typing import Any, List, Tuple
+
+
 class Calculator:
     """
     Class that performs the complex calculation following
@@ -18,7 +21,7 @@ class Calculator:
         self.temp_num = ""
         self.calc_operations(input_list)
 
-    def calc_operations(self, input_list: list) -> None:
+    def calc_operations(self, input_list: List) -> None:
         """
         Performs the mathematical operations based on operands
         :param input_list: list of numbers and operads
@@ -38,7 +41,7 @@ class Calculator:
         except IndexError:
             raise IndexError("Invalid encoded value passed for calculation")
 
-    def solve_for_brackets(self, _input: list) -> int:
+    def solve_for_brackets(self, _input: List) -> float:
         """
         Performs the mathematical operations inside the brackets
         :param _input:
@@ -71,7 +74,7 @@ class Calculator:
             number_list, operator_list = self.solve(number_list, operator_list)
         return number_list[0]
 
-    def from_number(self, input_list: list) -> [list, list]:
+    def from_number(self, input_list: List[Any]) -> tuple[list[float], list[Any]]:
         """
         Breaks down string into the list of numbers and operands
         :param input_list:
@@ -110,7 +113,7 @@ class Calculator:
             return number_list, operator_list
 
     @staticmethod
-    def solve(number_list: list, operator_list: list) -> [list, list]:
+    def solve(number_list: List, operator_list: List) -> tuple[list[float], list[Any]]:
         """
         Performs the mathematical operations based on numbers and
         operands

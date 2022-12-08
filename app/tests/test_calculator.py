@@ -1,10 +1,11 @@
 import base64
 from unittest import TestCase
 
+from fastapi.testclient import TestClient
+
 from app.api.v1.routes.get_calculations import router
 from app.calculate import Calculator
 from app.validate import validate_input
-from fastapi.testclient import TestClient
 
 
 class BaseClass(TestCase):

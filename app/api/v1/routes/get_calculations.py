@@ -18,6 +18,12 @@ router = APIRouter()
     response_model=CalcResponse,
 )
 async def get_calculations(query: str):
+    """
+    get request API to get the calculations done
+    triggers the calculation methods
+    :param query:
+    :return:
+    """
     try:
         validated_params = validate_input(query)
         result = Calculator(validated_params)

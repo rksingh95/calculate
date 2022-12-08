@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import APIRouter, FastAPI
 from starlette import status
 from starlette.responses import RedirectResponse
 
