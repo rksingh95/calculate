@@ -30,4 +30,3 @@ jobs:
         - name: Build Stage
           run: |
             make docker_build_project
-            make run_server
