@@ -22,7 +22,8 @@ jobs:
             if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         - name: Lint Stage
           run: |
-              make lint
+              black app
+              black --check app
         - name: Test Stage
           run: |
             make test
