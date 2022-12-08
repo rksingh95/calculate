@@ -10,3 +10,7 @@ run_server:
 
 run_test:
 	poetry run pytest app/
+
+lint:
+	poetry run isort --gitignore --check-only app/
+	poetry run black --check --diff app/

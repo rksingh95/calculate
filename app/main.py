@@ -1,11 +1,7 @@
 from fastapi import APIRouter, FastAPI
-from starlette import status
 from starlette.responses import RedirectResponse
 
 from app.api.v1.routes import get_calculations
-from app.calculate import Calculator
-from app.models import CalcResponse
-from app.validate import validate_input
 
 app = FastAPI(
     title="Calculator APP",

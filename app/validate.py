@@ -38,4 +38,6 @@ def only_simple_math_and_numbers(params: str) -> str:
     if RE_INT_AND_MATH.match(params):
         return params
     else:
-        raise ValueError("Only simple math + - * / ( ) and numbers [0-9] required")
+        raise ValueError(
+            "Only simple math " "+ - * / ( ) " "and numbers [0-9] required"
+        )
