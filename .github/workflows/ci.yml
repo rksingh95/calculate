@@ -1,39 +1,40 @@
 name: CI
-
 on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - lint
+      - test
+      - build-image
+      - run-server
 
-stages:
-  - lint
-  - test
-  - build-image
-  - run-server
+    lint:
+      image: python:3.9
+      stage: lint
+      before_script:
+        - pip install poetry
+        - poetry install
+        - poetry config virtualenvs.create false
+      script:
+        - make lint
 
-lint:
-  image: python:3.9
-  stage: lint
-  before_script:
-    - pip install poetry
-    - poetry install
-    - poetry config virtualenvs.create false
-  script:
-    - make lint
+      test:
+        image: python:3.9
+        stage: lint
+        before_script:
+          - pip install poetry
+          - poetry install
+          - poetry config virtualenvs.create false
+        script:
+          - make run_test
 
-test:
-  image: python:3.9
-  stage: lint
-  before_script:
-    - pip install poetry
-    - poetry install
-    - poetry config virtualenvs.create false
-  script:
-    - make run_test
-
-build-image:
-  image: python:3.9
-  stage: lint
-  before_script:
-    - pip install poetry
-    - poetry install
-    - poetry config virtualenvs.create false
-  script:
-    - make docker_build_project
+        build-image:
+          image: python:3.9
+          stage: lint
+          before_script:
+            - pip install poetry
+            - poetry install
+            - poetry config virtualenvs.create false
+          script:
+            - make docker_build_project
