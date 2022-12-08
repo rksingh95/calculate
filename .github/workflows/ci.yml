@@ -22,8 +22,8 @@ jobs:
             if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         - name: Lint with black
           run: |
-              # Code formatting with black, check every python file in the src directory 
-              make lint
+              black app
+              black --check app
         - name: Test with pytest
           run: |
             make run_test
