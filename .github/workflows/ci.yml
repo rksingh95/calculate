@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: linting application
-        run: pip install poetry && poetry install && make lint
+        run: make lint
       - name: test application
-        run: pip install poetry && poetry install && make test
+        run: make test
       - name: build-image
-        run: pip install poetry && poetry install && make docker_build_project
+        run: make docker_build_project
