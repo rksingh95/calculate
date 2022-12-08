@@ -20,13 +20,13 @@ jobs:
             python -m pip install --upgrade pip
             python -m pip install black pytest
             if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        - name: Lint with black
+        - name: Lint Stage
           run: |
               make lint
-        - name: Test with pytest
+        - name: Test Stage
           run: |
             make test
-        - name: Build Image
+        - name: Build Stage
           run: |
             make docker_build_project
             make run_server
