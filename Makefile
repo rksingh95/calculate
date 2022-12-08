@@ -12,5 +12,5 @@ run_test:
 	poetry run pytest app/
 
 lint:
-	poetry run isort --gitignore --check-only app/
+	poetry run isort
 	poetry run black --check --diff app/
