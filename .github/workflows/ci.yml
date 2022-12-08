@@ -26,7 +26,7 @@ jobs:
               black --check app
         - name: Test Stage
           run: |
-            make test
+            pytest
         - name: Build Stage
           run: |
             make docker_build_project
