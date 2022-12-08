@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: linting application
-        run: pip install poetry && poetry install && make lint
+        run: pip install poetry && pwd && poetry install && make lint
       - name: test application
         run: pip install poetry && poetry install && make test
       - name: build-image
