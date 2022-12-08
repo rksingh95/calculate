@@ -29,4 +29,4 @@ jobs:
             pytest
         - name: Build Stage
           run: |
-            make docker_build_project
+            make docker_compose
