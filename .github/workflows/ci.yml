@@ -27,3 +27,6 @@ jobs:
         - name: Test with pytest
           run: |
             pytest
+        - name: Build Image
+          run: |
+            make docker_build_project
