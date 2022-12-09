@@ -18,6 +18,6 @@ run the application by pulling the docker image.
 - If we pass normal string the API handles them as exception
 - Any other format input aprt from base64 encoded will be triggered as an application exception
 
-
-
-
+### Calculator app OpenAPI Doc
+![Application Doc](app/OpenAPI/Screenshot 2022-12-09 at 09.19.32.png)
+![Calculator API](app/OpenAPI/Screenshot 2022-12-09 at 09.19.24.png)
