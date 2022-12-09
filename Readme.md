@@ -19,5 +19,5 @@ run the application by pulling the docker image.
 - Any other format input aprt from base64 encoded will be triggered as an application exception
 
 ### Calculator app OpenAPI Doc
-![Application Doc](app/OpenAPI/Screenshot 2022-12-09 at 09.19.32.png)
-![Calculator API](app/OpenAPI/Screenshot 2022-12-09 at 09.19.24.png)
+![Calculator API](https://github.com/rksingh95/calculate/blob/786a8ab01f50825f7c45dc933779a94f9f9429ca/app/OpenAPI/Screenshot%202022-12-09%20at%2009.19.24.png)
+![Application Doc](https://github.com/rksingh95/calculate/blob/786a8ab01f50825f7c45dc933779a94f9f9429ca/app/OpenAPI/Screenshot%202022-12-09%20at%2009.19.32.png)
