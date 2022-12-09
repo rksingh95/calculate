@@ -78,3 +78,17 @@ class TestCalculator(BaseClass):
                 "message": "exceptions must derive from BaseException",
             },
         )
+
+    def test_get_valid_operations_calculations(self):
+        response = self.client.get(
+            "calculates/?query=MiAqICgyMy8oMyozKSktIDIzICogKDIqMyk="
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            response.json(),
+            {
+                "error": False,
+                "result": -92.0,
+                "message": "Result Calculated",
+            },
+        )
